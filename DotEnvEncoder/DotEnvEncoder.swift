@@ -44,6 +44,14 @@ private struct DotEnvKeyedEncodingContainer<Key: CodingKey>: KeyedEncodingContai
     let encoder: DotEnvEncoder
     var codingPath: [any CodingKey] { encoder.codingPath }
     
+    func escape(_ value: String) -> String {
+        if value.rangeOfCharacter(from: .whitespaces) != nil {
+            let escaped = value.replacingOccurrences(of: "\"", with: "\\\"")
+            return "\"\(escaped)\""
+        }
+        return value
+    }
+    
     func encodeNil(forKey key: Key) throws {
         // exclude nil values from dotenv files
         return
@@ -54,7 +62,7 @@ private struct DotEnvKeyedEncodingContainer<Key: CodingKey>: KeyedEncodingContai
             case let value as Bool:
                 encoder.addPair(key.stringValue, value ? "true" : "")
             case let value as String:
-                encoder.addPair(key.stringValue, value)
+                encoder.addPair(key.stringValue, escape(value))
             case let value as Double:
                 encoder.addPair(key.stringValue, String(value))
             case let value as Float:
