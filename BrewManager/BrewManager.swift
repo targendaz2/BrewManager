@@ -6,16 +6,22 @@
 //
 
 import ArgumentParser
-import DotEnvEncoder
+import DotEnvEncoding
 
 @main
-struct BrewManager: ParsableCommand {
+struct Start: ParsableCommand {
+    static let configuration = CommandConfiguration(abstract: "Starts Brew Manager")
+    
     mutating func run() throws {
         guard let prefs = try? BrewPrefs.fromUserDefaults() else {
             fatalError("Failed to load BrewPrefs from UserDefaults")
         }
         
-        let encoder = DotEnvEncoder()
+        let encoder = DotEnvEncoder(arraySeparators: [
+            "HOMEBREW_NO_CLEANUP_FORMULAE": ",",
+            "no_proxy": ",",
+        ])
+        
         guard let encodedPrefs = try? encoder.encode(prefs) else {
             fatalError("Failed to encode BrewPrefs to DotEnv")
         }

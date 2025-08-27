@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EC1F53DA2E5EBAEC0072C3C2 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F53D92E5EBAEC0072C3C2 /* ArgumentParser */; };
-		EC1F54072E5EBDEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */; };
-		EC1F54142E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */; };
-		EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC1F54072E5EBDEA0072C3C2 /* DotEnvEncoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */; };
+		EC1F54142E5EBEEA0072C3C2 /* DotEnvEncoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */; };
+		EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Embed Frameworks */,
+				EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoding.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,8 +55,8 @@
 
 /* Begin PBXFileReference section */
 		EC1F53D12E5EBA700072C3C2 /* BrewManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BrewManager; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DotEnvEncoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC1F54062E5EBDEA0072C3C2 /* DotEnvEncoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotEnvEncoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DotEnvEncoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1F54062E5EBDEA0072C3C2 /* DotEnvEncodingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotEnvEncodingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1F54252E5EC3B20072C3C2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EC90F7A42E52E70D005BF176 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EC90F7A62E52E71D005BF176 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -73,14 +73,14 @@
 			path = BrewManager;
 			sourceTree = "<group>";
 		};
-		EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoder */ = {
+		EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoding */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DotEnvEncoder;
+			path = DotEnvEncoding;
 			sourceTree = "<group>";
 		};
-		EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncoderTests */ = {
+		EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncodingTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DotEnvEncoderTests;
+			path = DotEnvEncodingTests;
 			sourceTree = "<group>";
 		};
 		EC90F7AF2E52E9EE005BF176 /* Packaging */ = {
@@ -96,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC1F53DA2E5EBAEC0072C3C2 /* ArgumentParser in Frameworks */,
-				EC1F54142E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */,
+				EC1F54142E5EBEEA0072C3C2 /* DotEnvEncoding.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC1F54072E5EBDEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */,
+				EC1F54072E5EBDEA0072C3C2 /* DotEnvEncoding.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 		EC1F534C2E5AADAD0072C3C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */,
-				EC1F54062E5EBDEA0072C3C2 /* DotEnvEncoderTests.xctest */,
+				EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */,
+				EC1F54062E5EBDEA0072C3C2 /* DotEnvEncodingTests.xctest */,
 				EC1F53D12E5EBA700072C3C2 /* BrewManager */,
 			);
 			path = Products;
@@ -134,8 +134,8 @@
 				EC90F7AF2E52E9EE005BF176 /* Packaging */,
 				EC1F534D2E5AADD00072C3C2 /* Assets */,
 				EC1F53C92E5EBA030072C3C2 /* BrewManager */,
-				EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoder */,
-				EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncoderTests */,
+				EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoding */,
+				EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncodingTests */,
 				EC1F534C2E5AADAD0072C3C2 /* Products */,
 				EC90F7A62E52E71D005BF176 /* README.md */,
 				EC1F54252E5EC3B20072C3C2 /* LICENSE */,
@@ -181,9 +181,9 @@
 			productReference = EC1F53D12E5EBA700072C3C2 /* BrewManager */;
 			productType = "com.apple.product-type.tool";
 		};
-		EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */ = {
+		EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoding */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC1F540D2E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoder" */;
+			buildConfigurationList = EC1F540D2E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoding" */;
 			buildPhases = (
 				EC1F53F72E5EBDEA0072C3C2 /* Headers */,
 				EC1F53F82E5EBDEA0072C3C2 /* Sources */,
@@ -195,18 +195,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoder */,
+				EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoding */,
 			);
-			name = DotEnvEncoder;
+			name = DotEnvEncoding;
 			packageProductDependencies = (
 			);
 			productName = DotEnvEncoder;
-			productReference = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */;
+			productReference = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EC1F54052E5EBDEA0072C3C2 /* DotEnvEncoderTests */ = {
+		EC1F54052E5EBDEA0072C3C2 /* DotEnvEncodingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC1F54102E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoderTests" */;
+			buildConfigurationList = EC1F54102E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncodingTests" */;
 			buildPhases = (
 				EC1F54022E5EBDEA0072C3C2 /* Sources */,
 				EC1F54032E5EBDEA0072C3C2 /* Frameworks */,
@@ -218,13 +218,13 @@
 				EC1F54092E5EBDEA0072C3C2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncoderTests */,
+				EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncodingTests */,
 			);
-			name = DotEnvEncoderTests;
+			name = DotEnvEncodingTests;
 			packageProductDependencies = (
 			);
 			productName = DotEnvEncoderTests;
-			productReference = EC1F54062E5EBDEA0072C3C2 /* DotEnvEncoderTests.xctest */;
+			productReference = EC1F54062E5EBDEA0072C3C2 /* DotEnvEncodingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -266,8 +266,8 @@
 			projectRoot = "";
 			targets = (
 				EC1F53C72E5EBA030072C3C2 /* BrewManager */,
-				EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */,
-				EC1F54052E5EBDEA0072C3C2 /* DotEnvEncoderTests */,
+				EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoding */,
+				EC1F54052E5EBDEA0072C3C2 /* DotEnvEncodingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,12 +316,12 @@
 /* Begin PBXTargetDependency section */
 		EC1F54092E5EBDEA0072C3C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */;
+			target = EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoding */;
 			targetProxy = EC1F54082E5EBDEA0072C3C2 /* PBXContainerItemProxy */;
 		};
 		EC1F54172E5EBEEA0072C3C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */;
+			target = EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoding */;
 			targetProxy = EC1F54162E5EBEEA0072C3C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -380,7 +380,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoding;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -415,7 +415,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoding;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -589,7 +589,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC1F540D2E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoder" */ = {
+		EC1F540D2E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC1F540E2E5EBDEA0072C3C2 /* Debug */,
@@ -598,7 +598,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC1F54102E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoderTests" */ = {
+		EC1F54102E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncodingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC1F54112E5EBDEA0072C3C2 /* Debug */,
