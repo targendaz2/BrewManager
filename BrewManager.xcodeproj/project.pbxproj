@@ -10,7 +10,6 @@
 		EC1F53DA2E5EBAEC0072C3C2 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F53D92E5EBAEC0072C3C2 /* ArgumentParser */; };
 		EC1F54072E5EBDEA0072C3C2 /* DotEnvEncoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */; };
 		EC1F54142E5EBEEA0072C3C2 /* DotEnvEncoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */; };
-		EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,17 +38,6 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
-		};
-		EC1F54182E5EBEEA0072C3C2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoding.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -163,7 +151,6 @@
 				EC1F53C42E5EBA030072C3C2 /* Sources */,
 				EC1F53C52E5EBA030072C3C2 /* Frameworks */,
 				EC1F53C62E5EBA030072C3C2 /* CopyFiles */,
-				EC1F54182E5EBEEA0072C3C2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +364,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -412,6 +400,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
