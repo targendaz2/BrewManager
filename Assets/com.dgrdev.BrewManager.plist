@@ -2,9 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>com.apple.security.app-sandbox</key>
+	<key>Label</key>
+	<string>com.dgrdev.BrewManager</string>
+	<key>BundleProgram</key>
+	<string>Contents/MacOS/BrewManager</string>
+	<key>RunAtLoad</key>
 	<true/>
-	<key>com.apple.security.files.user-selected.read-only</key>
+	<key>KeepAlive</key>
 	<true/>
 </dict>
 </plist>

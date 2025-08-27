@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DotEnvEncoder.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EC1F53B82E5EA1490072C3C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC1F53C72E5EBA030072C3C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC90F7902E52E5FE005BF176</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

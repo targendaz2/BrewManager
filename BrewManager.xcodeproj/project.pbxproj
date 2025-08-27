@@ -6,69 +6,224 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EC1F53DA2E5EBAEC0072C3C2 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F53D92E5EBAEC0072C3C2 /* ArgumentParser */; };
+		EC1F54072E5EBDEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */; };
+		EC1F54142E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */; };
+		EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC1F54082E5EBDEA0072C3C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC90F7892E52E5FE005BF176 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC1F53FB2E5EBDEA0072C3C2;
+			remoteInfo = DotEnvEncoder;
+		};
+		EC1F54162E5EBEEA0072C3C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC90F7892E52E5FE005BF176 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC1F53FB2E5EBDEA0072C3C2;
+			remoteInfo = DotEnvEncoder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC1F53C62E5EBA030072C3C2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		EC1F54182E5EBEEA0072C3C2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC1F54152E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		EC90F7912E52E5FE005BF176 /* BrewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1F53D12E5EBA700072C3C2 /* BrewManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BrewManager; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DotEnvEncoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1F54062E5EBDEA0072C3C2 /* DotEnvEncoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotEnvEncoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC90F7A42E52E70D005BF176 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EC90F7A62E52E71D005BF176 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		EC90F7932E52E5FE005BF176 /* BrewManager */ = {
+		EC1F534D2E5AADD00072C3C2 /* Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EC1F53C92E5EBA030072C3C2 /* BrewManager */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BrewManager;
+			sourceTree = "<group>";
+		};
+		EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoder */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DotEnvEncoder;
+			sourceTree = "<group>";
+		};
+		EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncoderTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DotEnvEncoderTests;
+			sourceTree = "<group>";
+		};
+		EC90F7AF2E52E9EE005BF176 /* Packaging */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Packaging;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EC90F78E2E52E5FE005BF176 /* Frameworks */ = {
+		EC1F53C52E5EBA030072C3C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1F53DA2E5EBAEC0072C3C2 /* ArgumentParser in Frameworks */,
+				EC1F54142E5EBEEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1F53F92E5EBDEA0072C3C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC1F54032E5EBDEA0072C3C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1F54072E5EBDEA0072C3C2 /* DotEnvEncoder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC1F534C2E5AADAD0072C3C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */,
+				EC1F54062E5EBDEA0072C3C2 /* DotEnvEncoderTests.xctest */,
+				EC1F53D12E5EBA700072C3C2 /* BrewManager */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 		EC90F7882E52E5FE005BF176 = {
 			isa = PBXGroup;
 			children = (
-				EC90F7932E52E5FE005BF176 /* BrewManager */,
-				EC90F7922E52E5FE005BF176 /* Products */,
+				EC90F7AF2E52E9EE005BF176 /* Packaging */,
+				EC1F534D2E5AADD00072C3C2 /* Assets */,
+				EC1F53C92E5EBA030072C3C2 /* BrewManager */,
+				EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoder */,
+				EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncoderTests */,
+				EC1F534C2E5AADAD0072C3C2 /* Products */,
+				EC90F7A62E52E71D005BF176 /* README.md */,
+				EC90F7A42E52E70D005BF176 /* .gitignore */,
 			);
-			sourceTree = "<group>";
-		};
-		EC90F7922E52E5FE005BF176 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC90F7912E52E5FE005BF176 /* BrewManager.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		EC1F53F72E5EBDEA0072C3C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		EC90F7902E52E5FE005BF176 /* BrewManager */ = {
+		EC1F53C72E5EBA030072C3C2 /* BrewManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC90F79D2E52E5FF005BF176 /* Build configuration list for PBXNativeTarget "BrewManager" */;
+			buildConfigurationList = EC1F53CC2E5EBA030072C3C2 /* Build configuration list for PBXNativeTarget "BrewManager" */;
 			buildPhases = (
-				EC90F78D2E52E5FE005BF176 /* Sources */,
-				EC90F78E2E52E5FE005BF176 /* Frameworks */,
-				EC90F78F2E52E5FE005BF176 /* Resources */,
+				EC1F53C42E5EBA030072C3C2 /* Sources */,
+				EC1F53C52E5EBA030072C3C2 /* Frameworks */,
+				EC1F53C62E5EBA030072C3C2 /* CopyFiles */,
+				EC1F54182E5EBEEA0072C3C2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC1F54172E5EBEEA0072C3C2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EC1F53C92E5EBA030072C3C2 /* BrewManager */,
+			);
+			name = BrewManager;
+			packageProductDependencies = (
+				EC1F53D92E5EBAEC0072C3C2 /* ArgumentParser */,
+			);
+			productName = BrewManager2;
+			productReference = EC1F53D12E5EBA700072C3C2 /* BrewManager */;
+			productType = "com.apple.product-type.tool";
+		};
+		EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1F540D2E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoder" */;
+			buildPhases = (
+				EC1F53F72E5EBDEA0072C3C2 /* Headers */,
+				EC1F53F82E5EBDEA0072C3C2 /* Sources */,
+				EC1F53F92E5EBDEA0072C3C2 /* Frameworks */,
+				EC1F53FA2E5EBDEA0072C3C2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				EC90F7932E52E5FE005BF176 /* BrewManager */,
+				EC1F53FD2E5EBDEA0072C3C2 /* DotEnvEncoder */,
 			);
-			name = BrewManager;
+			name = DotEnvEncoder;
 			packageProductDependencies = (
 			);
-			productName = BrewManager;
-			productReference = EC90F7912E52E5FE005BF176 /* BrewManager.app */;
-			productType = "com.apple.product-type.application";
+			productName = DotEnvEncoder;
+			productReference = EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC1F54052E5EBDEA0072C3C2 /* DotEnvEncoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1F54102E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoderTests" */;
+			buildPhases = (
+				EC1F54022E5EBDEA0072C3C2 /* Sources */,
+				EC1F54032E5EBDEA0072C3C2 /* Frameworks */,
+				EC1F54042E5EBDEA0072C3C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC1F54092E5EBDEA0072C3C2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncoderTests */,
+			);
+			name = DotEnvEncoderTests;
+			packageProductDependencies = (
+			);
+			productName = DotEnvEncoderTests;
+			productReference = EC1F54062E5EBDEA0072C3C2 /* DotEnvEncoderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -80,7 +235,13 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					EC90F7902E52E5FE005BF176 = {
+					EC1F53C72E5EBA030072C3C2 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					EC1F53FB2E5EBDEA0072C3C2 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					EC1F54052E5EBDEA0072C3C2 = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
@@ -94,18 +255,30 @@
 			);
 			mainGroup = EC90F7882E52E5FE005BF176;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EC1F53D82E5EBAEC0072C3C2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = EC90F7922E52E5FE005BF176 /* Products */;
+			productRefGroup = EC90F7882E52E5FE005BF176;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC90F7902E52E5FE005BF176 /* BrewManager */,
+				EC1F53C72E5EBA030072C3C2 /* BrewManager */,
+				EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */,
+				EC1F54052E5EBDEA0072C3C2 /* DotEnvEncoderTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EC90F78F2E52E5FE005BF176 /* Resources */ = {
+		EC1F53FA2E5EBDEA0072C3C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1F54042E5EBDEA0072C3C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +288,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EC90F78D2E52E5FE005BF176 /* Sources */ = {
+		EC1F53C42E5EBA030072C3C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1F53F82E5EBDEA0072C3C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1F54022E5EBDEA0072C3C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +311,150 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EC1F54092E5EBDEA0072C3C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */;
+			targetProxy = EC1F54082E5EBDEA0072C3C2 /* PBXContainerItemProxy */;
+		};
+		EC1F54172E5EBEEA0072C3C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC1F53FB2E5EBDEA0072C3C2 /* DotEnvEncoder */;
+			targetProxy = EC1F54162E5EBEEA0072C3C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		EC1F53CD2E5EBA030072C3C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = 2E9K39V4CT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_PKGINFO_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.BrewManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC1F53CE2E5EBA030072C3C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = 2E9K39V4CT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_PKGINFO_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.BrewManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EC1F540E2E5EBDEA0072C3C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2E9K39V4CT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoder;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EC1F540F2E5EBDEA0072C3C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2E9K39V4CT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoder;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EC1F54112E5EBDEA0072C3C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2E9K39V4CT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC1F54122E5EBDEA0072C3C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2E9K39V4CT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.DotEnvEncoderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		EC90F79B2E52E5FF005BF176 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -245,63 +575,36 @@
 			};
 			name = Release;
 		};
-		EC90F79E2E52E5FF005BF176 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BrewManager/BrewManager.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2E9K39V4CT;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.BrewManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		EC90F79F2E52E5FF005BF176 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BrewManager/BrewManager.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2E9K39V4CT;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dgrdev.BrewManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC1F53CC2E5EBA030072C3C2 /* Build configuration list for PBXNativeTarget "BrewManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1F53CD2E5EBA030072C3C2 /* Debug */,
+				EC1F53CE2E5EBA030072C3C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1F540D2E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1F540E2E5EBDEA0072C3C2 /* Debug */,
+				EC1F540F2E5EBDEA0072C3C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1F54102E5EBDEA0072C3C2 /* Build configuration list for PBXNativeTarget "DotEnvEncoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1F54112E5EBDEA0072C3C2 /* Debug */,
+				EC1F54122E5EBDEA0072C3C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EC90F78C2E52E5FE005BF176 /* Build configuration list for PBXProject "BrewManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -311,16 +614,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC90F79D2E52E5FF005BF176 /* Build configuration list for PBXNativeTarget "BrewManager" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EC90F79E2E52E5FF005BF176 /* Debug */,
-				EC90F79F2E52E5FF005BF176 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC1F53D82E5EBAEC0072C3C2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC1F53D92E5EBAEC0072C3C2 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC1F53D82E5EBAEC0072C3C2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC90F7892E52E5FE005BF176 /* Project object */;
 }
