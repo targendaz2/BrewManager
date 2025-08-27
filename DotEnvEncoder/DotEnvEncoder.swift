@@ -7,10 +7,18 @@
 
 import Foundation
 
+private func escape(_ value: String) -> String {
+    if value.rangeOfCharacter(from: .whitespaces) != nil {
+        let escaped = value.replacingOccurrences(of: "\"", with: "\\\"")
+        return "\"\(escaped)\""
+    }
+    return value
+}
+
 public class DotEnvEncoder: Encoder {
     public var codingPath: [any CodingKey] = []
     public var userInfo: [CodingUserInfoKey: Any] = [:]
-    var keyValues: [String: String] = [:]
+    public var keyValues: [String: String] = [:]
     
     public init() {}
     
@@ -38,18 +46,14 @@ public class DotEnvEncoder: Encoder {
 }
 
 // MARK: - keyed encoding container
-private struct DotEnvKeyedEncodingContainer<Key: CodingKey>: KeyedEncodingContainerProtocol {
+private class DotEnvKeyedEncodingContainer<Key: CodingKey>: KeyedEncodingContainerProtocol {
     typealias Key = Key
     
     let encoder: DotEnvEncoder
     var codingPath: [any CodingKey] { encoder.codingPath }
     
-    func escape(_ value: String) -> String {
-        if value.rangeOfCharacter(from: .whitespaces) != nil {
-            let escaped = value.replacingOccurrences(of: "\"", with: "\\\"")
-            return "\"\(escaped)\""
-        }
-        return value
+    init(encoder: DotEnvEncoder) {
+        self.encoder = encoder
     }
     
     func encodeNil(forKey key: Key) throws {
@@ -57,7 +61,10 @@ private struct DotEnvKeyedEncodingContainer<Key: CodingKey>: KeyedEncodingContai
         return
     }
     
-    mutating func encode<T>(_ value: T, forKey key: Key) throws where T: Encodable {
+    func encode<T>(_ value: T, forKey key: Key) throws where T: Encodable {
+        encoder.codingPath.append(key)
+        defer { encoder.codingPath.removeLast() }
+        
         switch value {
             case let value as Bool:
                 encoder.addPair(key.stringValue, value ? "true" : "")
@@ -99,10 +106,14 @@ private struct DotEnvKeyedEncodingContainer<Key: CodingKey>: KeyedEncodingContai
     func nestedContainer<NestedKey>(keyedBy keyType: NestedKey.Type, forKey key: Key)
     -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey
     {
-        encoder.container(keyedBy: keyType)
+        encoder.codingPath.append(key)
+        defer { encoder.codingPath.removeLast() }
+        return encoder.container(keyedBy: keyType)
     }
     
     func nestedUnkeyedContainer(forKey key: Key) -> any UnkeyedEncodingContainer {
+        encoder.codingPath.append(key)
+        defer { encoder.codingPath.removeLast() }
         return encoder.unkeyedContainer()
     }
     
@@ -117,25 +128,37 @@ private struct DotEnvKeyedEncodingContainer<Key: CodingKey>: KeyedEncodingContai
 }
 
 // MARK: - unkeyed encoding container
-private struct DotEnvUnkeyedEncodingContainer: UnkeyedEncodingContainer {
+private class DotEnvUnkeyedEncodingContainer: UnkeyedEncodingContainer {
     let encoder: DotEnvEncoder
     var codingPath: [any CodingKey] { encoder.codingPath }
     let count = 0
+    
+    var values: [String] = []
+    
+    init(encoder: DotEnvEncoder) {
+        self.encoder = encoder
+    }
+    
+    deinit {
+        if values.isEmpty {
+            return
+        }
+        
+        let key = codingPath.map { $0.stringValue }.joined(separator: "_")
+        encoder.addPair(key, values.joined(separator: " "))
+    }
     
     func encodeNil() throws {
         // exclude nil values from dotenv files
         return
     }
     
-    mutating func encode<T: Encodable>(_ value: T) throws {
-        let key = codingPath.map { $0.stringValue }.joined(separator: "_")
-        var values: [String] = []
-        
+    func encode<T: Encodable>(_ value: T) throws {
         switch value {
             case let value as Bool:
                 values.append(value ? "true" : "")
             case let value as String:
-                values.append(value)
+                values.append(escape(value))
             case let value as Double:
                 values.append(String(value))
             case let value as Float:
@@ -167,40 +190,38 @@ private struct DotEnvUnkeyedEncodingContainer: UnkeyedEncodingContainer {
             default:
                 try value.encode(to: encoder)
         }
-        
-        if values.isEmpty {
-            return
-        }
-        
-        encoder.addPair(key, values.joined(separator: " "))
     }
     
-    mutating func nestedContainer<NestedKey>(keyedBy keyType: NestedKey.Type)
+    func nestedContainer<NestedKey>(keyedBy keyType: NestedKey.Type)
     -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey
     {
         encoder.container(keyedBy: keyType)
     }
     
-    mutating func nestedUnkeyedContainer() -> any UnkeyedEncodingContainer {
+    func nestedUnkeyedContainer() -> any UnkeyedEncodingContainer {
         self
     }
     
-    mutating func superEncoder() -> any Encoder {
+    func superEncoder() -> any Encoder {
         encoder
     }
 }
 
 // MARK: - single value encoding container
-private struct DotEnvSingleValueEncodingContainer: SingleValueEncodingContainer {
+private class DotEnvSingleValueEncodingContainer: SingleValueEncodingContainer {
     let encoder: DotEnvEncoder
     var codingPath: [any CodingKey] { encoder.codingPath }
+    
+    init(encoder: DotEnvEncoder) {
+        self.encoder = encoder
+    }
     
     func encodeNil() throws {
         // exclude nil values from dotenv files
         return
     }
     
-    mutating func encode<T: Encodable>(_ value: T) throws {
+    func encode<T: Encodable>(_ value: T) throws {
         let key = codingPath.map { $0.stringValue }.joined(separator: "_")
         
         switch value {

@@ -13,6 +13,8 @@ struct DotEnvEncoderTests {
     struct TestStruct: Codable {
         var BOOL_VALUE: Bool? = nil
         var STRING_VALUE: String? = nil
+        var INT_VALUE: Int? = nil
+        var ARRAY_VALUE: [String]? = nil
     }
     
     @Test("can encode true bool value")
@@ -23,9 +25,9 @@ struct DotEnvEncoderTests {
         
         // WHEN
         let result = try encoder.encode(data)
-        let expectedResult = "BOOL_VALUE=true"
         
         // THEN
+        let expectedResult = "BOOL_VALUE=true"
         #expect(result == expectedResult)
     }
     
@@ -37,9 +39,9 @@ struct DotEnvEncoderTests {
         
         // WHEN
         let result = try encoder.encode(data)
-        let expectedResult = "BOOL_VALUE="
         
         // THEN
+        let expectedResult = "BOOL_VALUE="
         #expect(result == expectedResult)
     }
     
@@ -51,9 +53,9 @@ struct DotEnvEncoderTests {
         
         // WHEN
         let result = try encoder.encode(data)
-        let expectedResult = "STRING_VALUE=hello"
         
         // THEN
+        let expectedResult = "STRING_VALUE=hello"
         #expect(result == expectedResult)
     }
     
@@ -65,9 +67,9 @@ struct DotEnvEncoderTests {
         
         // WHEN
         let result = try encoder.encode(data)
-        let expectedResult = "STRING_VALUE=\"hello world\""
         
         // THEN
+        let expectedResult = "STRING_VALUE=\"hello world\""
         #expect(result == expectedResult)
     }
     
@@ -79,9 +81,51 @@ struct DotEnvEncoderTests {
         
         // WHEN
         let result = try encoder.encode(data)
-        let expectedResult = "STRING_VALUE=\"hello \\\"john\\\"\""
         
         // THEN
+        let expectedResult = "STRING_VALUE=\"hello \\\"john\\\"\""
+        #expect(result == expectedResult)
+    }
+    
+    @Test("can encode int value")
+    func canEncodeIntValue() async throws {
+        // GIVEN
+        let data = TestStruct(INT_VALUE: 42)
+        let encoder = DotEnvEncoder()
+        
+        // WHEN
+        let result = try encoder.encode(data)
+        
+        // THEN
+        let expectedResult = "INT_VALUE=42"
+        #expect(result == expectedResult)
+    }
+    
+    @Test("can encode array values")
+    func canEncodeArrayValues() async throws {
+        // GIVEN
+        let data = TestStruct(ARRAY_VALUE: ["one", "two", "three"])
+        let encoder = DotEnvEncoder()
+        
+        // WHEN
+        let result = try encoder.encode(data)
+        
+        // THEN
+        let expectedResult = "ARRAY_VALUE=one two three"
+        #expect(result == expectedResult)
+    }
+    
+    @Test("can encode array values containing spaces")
+    func canEncodeArrayValuesContainingSpaces() async throws {
+        // GIVEN
+        let data = TestStruct(ARRAY_VALUE: ["one apple", "two apples", "three apples"])
+        let encoder = DotEnvEncoder()
+        
+        // WHEN
+        let result = try encoder.encode(data)
+        
+        // THEN
+        let expectedResult = "ARRAY_VALUE=\"one apple\" \"two apples\" \"three apples\""
         #expect(result == expectedResult)
     }
 }
