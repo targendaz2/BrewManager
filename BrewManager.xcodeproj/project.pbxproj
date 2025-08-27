@@ -57,6 +57,7 @@
 		EC1F53D12E5EBA700072C3C2 /* BrewManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BrewManager; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1F53FC2E5EBDEA0072C3C2 /* DotEnvEncoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DotEnvEncoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1F54062E5EBDEA0072C3C2 /* DotEnvEncoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotEnvEncoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1F54252E5EC3B20072C3C2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EC90F7A42E52E70D005BF176 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EC90F7A62E52E71D005BF176 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +138,7 @@
 				EC1F540A2E5EBDEA0072C3C2 /* DotEnvEncoderTests */,
 				EC1F534C2E5AADAD0072C3C2 /* Products */,
 				EC90F7A62E52E71D005BF176 /* README.md */,
+				EC1F54252E5EC3B20072C3C2 /* LICENSE */,
 				EC90F7A42E52E70D005BF176 /* .gitignore */,
 			);
 			sourceTree = "<group>";
