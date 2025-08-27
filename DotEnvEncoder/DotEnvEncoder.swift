@@ -18,9 +18,18 @@ private func escape(_ value: String) -> String {
 public class DotEnvEncoder: Encoder {
     public var codingPath: [any CodingKey] = []
     public var userInfo: [CodingUserInfoKey: Any] = [:]
-    public var keyValues: [String: String] = [:]
     
-    public init() {}
+    var keyValues: [String: String] = [:]
+    var defaultArraySeparator: String
+    var arraySeparators: [String : String]
+    
+    public init(
+        defaultArraySeparator: String = " ",
+        arraySeparators: [String : String] = [:]
+    ) {
+        self.defaultArraySeparator = defaultArraySeparator
+        self.arraySeparators = arraySeparators
+    }
     
     public func encode<T: Encodable>(_ value: T) throws -> String {
         try value.encode(to: self)
@@ -145,7 +154,15 @@ private class DotEnvUnkeyedEncodingContainer: UnkeyedEncodingContainer {
         }
         
         let key = codingPath.map { $0.stringValue }.joined(separator: "_")
-        encoder.addPair(key, values.joined(separator: " "))
+        
+        let separator: String
+        if encoder.arraySeparators.keys.contains(key) {
+            separator = encoder.arraySeparators[key]!
+        } else {
+            separator = encoder.defaultArraySeparator
+        }
+        
+        encoder.addPair(key, values.joined(separator: separator))
     }
     
     func encodeNil() throws {

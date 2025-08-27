@@ -128,4 +128,18 @@ struct DotEnvEncoderTests {
         let expectedResult = "ARRAY_VALUE=\"one apple\" \"two apples\" \"three apples\""
         #expect(result == expectedResult)
     }
+    
+    @Test("can encode specific array values joined by comma")
+    func canEncodeSpecificArrayValuesJoinedByComma() async throws {
+        // GIVEN
+        let data = TestStruct(ARRAY_VALUE: ["one", "two", "three"])
+        let encoder = DotEnvEncoder(arraySeparators: ["ARRAY_VALUE": ","])
+        
+        // WHEN
+        let result = try encoder.encode(data)
+        
+        // THEN
+        let expectedResult = "ARRAY_VALUE=one,two,three"
+        #expect(result == expectedResult)
+    }
 }
