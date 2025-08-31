@@ -6,25 +6,26 @@
 //
 
 import ArgumentParser
-import DotEnvEncoding
+import Foundation
+import Monitoring
 
 @main
-struct Start: ParsableCommand {
-    static let configuration = CommandConfiguration(abstract: "Starts Brew Manager")
-    
+struct BrewManager: ParsableCommand {
     mutating func run() throws {
-        guard let prefs = try? BrewPrefs.fromUserDefaults() else {
-            fatalError("Failed to load BrewPrefs from UserDefaults")
+        let _ = UserDefaultsMonitor { notification in
+            let prefs = BrewPrefs.load()
+            prefs.write()
         }
-        
-        let encoder = DotEnvEncoder(arraySeparators: [
-            "HOMEBREW_NO_CLEANUP_FORMULAE": ",",
-            "no_proxy": ",",
-        ])
-        
-        guard let encodedPrefs = try? encoder.encode(prefs) else {
-            fatalError("Failed to encode BrewPrefs to DotEnv")
+
+        do {
+            let _ = try FileMonitor(path: brewEnvFile) { event in
+                let prefs = BrewPrefs.load()
+                prefs.write()
+            }
+        } catch {
+            fatalError("Could not monitor brew env file at \(brewEnvFile): \(error)")
         }
-        print(encodedPrefs)
+
+        RunLoop.main.run()
     }
 }

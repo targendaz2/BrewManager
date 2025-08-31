@@ -5,6 +5,7 @@
 //  Created by David Rosenberg on 8/18/25.
 //
 
+import DotEnvEncoding
 import Foundation
 
 struct BrewPrefs: Codable {
@@ -12,7 +13,7 @@ struct BrewPrefs: Codable {
         case allow = "allow"
         case deny = "deny"
     }
-    
+
     let HOMEBREW_ALLOWED_TAPS: [String]?  // space separated
     let HOMEBREW_API_AUTO_UPDATE_SECS: Int?
     let HOMEBREW_API_DOMAIN: URL?
@@ -120,17 +121,28 @@ struct BrewPrefs: Codable {
     let no_proxy: [String]?  // comma separated
 }
 
-// MARK: - UserDefaults decoding
 extension BrewPrefs {
-    static func fromUserDefaults() throws -> Self {
-        let dict = UserDefaults.standard.dictionaryRepresentation()
-        let data = try PropertyListSerialization.data(
-            fromPropertyList: dict,
-            format: .binary,
-            options: 0
-        )
-        let decoder = PropertyListDecoder()
-        let prefs = try decoder.decode(BrewPrefs.self, from: data)
+    static func load() -> Self {
+        guard let prefs = try? UserDefaults.decode(BrewPrefs.self) else {
+            fatalError("Failed to load BrewPrefs from UserDefaults")
+        }
         return prefs
+    }
+
+    func write() {
+        let encoder = DotEnvEncoder(arraySeparators: [
+            "HOMEBREW_NO_CLEANUP_FORMULAE": ",",
+            "no_proxy": ",",
+        ])
+
+        guard let encodedPrefs = try? encoder.encode(self) else {
+            fatalError("Failed to encode BrewPrefs to DotEnv")
+        }
+        
+        do {
+            try encodedPrefs.write(to: brewEnvFile, atomically: true, encoding: .utf8)
+        } catch {
+            fatalError("Failed to write BrewPrefs to file: \(error)")
+        }
     }
 }

@@ -7,4 +7,4 @@
 
 import Foundation
 
-let brewEnvFile = URL(string: "/etc/homebrew/brew.env")
+let brewEnvFile = URL(string: "/etc/homebrew/brew.env")!
